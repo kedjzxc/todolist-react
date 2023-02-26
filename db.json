@@ -1,0 +1,23 @@
+{
+    "users": [
+        {   
+            "id": 1,
+            "login": "Kirill",
+            "password": "1ei1iioj",
+            "email": "test@test.com",
+            "catrgories": [
+                {
+                    "id": 1,
+                    "categoryName": "Frontend",
+                    "tasks": [
+                        {
+                            "taskTitle": "Изучить реакт",
+                            "id": 121312311,
+                            "isComplete": false
+                        }
+                    ]
+                }
+            ]           
+        }
+    ]
+}
