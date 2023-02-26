@@ -1,23 +1,84 @@
 {
-    "users": [
-        {   
-            "id": 1,
-            "login": "Kirill",
-            "password": "1ei1iioj",
-            "email": "test@test.com",
-            "catrgories": [
-                {
-                    "id": 1,
-                    "categoryName": "Frontend",
-                    "tasks": [
-                        {
-                            "taskTitle": "Изучить реакт",
-                            "id": 121312311,
-                            "isComplete": false
-                        }
-                    ]
-                }
-            ]           
+  "users": [
+    {
+      "id": 1,
+      "login": "Kirill",
+      "password": "1ei1iioj",
+      "email": "test@test.com",
+      "catrgories": [
+        {
+          "id": 1,
+          "categoryName": "Frontend",
+          "tasks": [
+            {
+              "taskTitle": "Изучить реакт",
+              "id": 121312311,
+              "isComplete": false
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "email": "oijwdkjew@gmail.com",
+      "password": "$2a$10$RL0vj2S6uRL7MGn0vXBXIeldBxxi6JF9bThF9CB2i.egrmpf.b5Za",
+      "login": "sdfsdfsdf",
+      "categories": [],
+      "id": 2
+    },
+    {
+      "email": "sidofisdif3@mail.ru",
+      "password": "$2a$10$VkXE0em9WPewnbwsn9yaD.xMT71WeScwC0KhBx3S8.bgmXYKsgJX2",
+      "login": "kirillllll",
+      "categories": [],
+      "id": 3
+    },
+    {
+      "email": "testovoe@mail.ru",
+      "password": "$2a$10$RzPSYA6LWWM2twmYwimJ7u.glDSh8dTVJ3MRNchHU.GNWaaM2l.9W",
+      "login": "kedjjjj",
+      "categories": [],
+      "id": 4
+    },
+    {
+      "email": "test123@gmail.com",
+      "password": "$2a$10$l/B3w3hMjIBG7ip0QFTDuev9NrsdyAhG4vzfI0KU/3rJ//t7uYToW",
+      "login": "test123",
+      "categories": [],
+      "id": 5
+    },
+    {
+      "email": "test321@mail.ru",
+      "password": "$2a$10$xfe7bZj72PWeS.uq93cGN.Iua4ESCTB0l/L177bBupBw0IiWgAso2",
+      "login": "test321.",
+      "categories": [],
+      "id": 6
+    },
+    {
+      "email": "oleg123@mail.ru",
+      "password": "$2a$10$mGMoFYtryYtkg6wG5Eqr2eA.AYHwfUnm7MQT.6yYeOvGw6tRcVrJC",
+      "login": "oleg",
+      "categories": [
+        {
+          "categoryName": "dfdfg",
+          "id": "18d2fe9b-2a1a-4e5e-8315-6b482213b45e",
+          "color": "red",
+          "tasks": []
+        },
+        {
+          "categoryName": "sdfsdf",
+          "id": "97206042-e701-4a0c-b5d9-077acb4aaa7f",
+          "color": "yellow",
+          "tasks": []
+        },
+        {
+          "categoryName": "sdfsdf",
+          "id": "dffa3a92-70a6-4b5b-974f-253367b16e1c",
+          "color": "yellow",
+          "tasks": []
+        }
+      ],
+      "id": 7
+    }
+  ]
 }

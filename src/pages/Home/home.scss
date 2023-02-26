@@ -1,0 +1,45 @@
+.home {
+    display: flex;
+    gap: 57px;
+}
+
+.content {
+    padding-left: 57px;
+    padding-top: 56px;
+    &__title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 420px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #f2f2f2;
+        margin-bottom: 31px;
+    }
+    &__title {
+        color: aquamarine;
+        font-weight: 600;
+    }
+    &__tasks-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    &__taks-label {
+        font-size: 22px;
+        font-weight: 500;
+        color: #000;
+
+    }
+    &__add {
+        display: flex;
+        align-items: center;
+        gap: 19px;
+        cursor: pointer;
+    }
+    &__add-text {
+        color: #b4b4b4;
+        font-weight: 500;
+        font-size: 22px;
+    }
+}
