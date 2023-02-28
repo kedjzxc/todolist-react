@@ -1,0 +1,102 @@
+.content {
+    padding-left: 57px;
+    padding-top: 56px;
+    &__title-wrap {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        width: 420px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #f2f2f2;
+        margin-bottom: 31px;
+    }
+    &__title {
+        color: aquamarine;
+        font-weight: 600;
+    }
+    &__tasks-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    &__tasks-input {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+    }
+    &__tasks-label {
+        font-size: 22px;
+        font-weight: 500;
+        color: #000;
+
+    }
+    &__add {
+        display: flex;
+        align-items: center;
+        gap: 19px;
+        cursor: pointer;
+    }
+    &__add-text {
+        color: #b4b4b4;
+        font-weight: 500;
+        font-size: 22px;
+    }
+    &__add-modal {
+        display: none;
+        margin-top: 20px;
+        max-width: 600px;
+        width: 100%;
+        padding: 15px;
+        background: #fff;
+         -webkit-box-shadow: -1px 4px 22px 3px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: -1px 4px 22px 3px rgba(34, 60, 80, 0.2);
+        box-shadow: -1px 4px 22px 3px rgba(34, 60, 80, 0.2);
+        border-radius: 10px;
+        &.active {
+            display: block;
+        }
+    }
+    &__add-modal-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__add-modal-input {
+        width: 100%;
+        border: 1px solid #b4b4b4;
+        padding: 10px;
+        font-size: 20px;
+        outline: none;
+        border-radius: 10px;
+    }
+    &__add-modal-buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+}
+
+.button__add {
+    width: 50%;
+    padding: 15px 0px;
+    font-size: 20px;
+    border: none;
+    background: #4DD599;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.button__cancel {
+    width: 50%;
+    padding: 15px 0px;
+    font-size: 20px;
+    border: none;
+    background: #F4F6F8;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #9C9C9C;
+    font-weight: 500;
+}

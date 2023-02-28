@@ -4,12 +4,15 @@ import { dataColors } from '../../utils/dataColors';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { CustomContext } from '../../utils/Context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './aside.scss'
 
 const Aside = () => {
   const [modal, setModal] = useState(false);
   const [selected, setSelected] = useState(dataColors[0]);
   const [category, setCategory] = useState('');
-  const { user, setUser } = useContext(CustomContext);
+  const { user, setUser, status, setStatus } = useContext(CustomContext);
 
   const addCategory = () => {
     let newCategory = {
@@ -35,13 +38,54 @@ const Aside = () => {
           }),
         );
         setModal((modal) => !modal);
+        setCategory('');
+        toast('Категория добавлена');
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast(`Категория не добавлена, ${err.message}`));
+  };
+
+  const storageClear = () => {
+    localStorage.removeItem('user');
+    setUser({
+      email: '',
+    });
+  };
+
+  const checkCategories = () => {
+    if (user.categories.findIndex((item) => item.categoryName === category) > -1) {
+      toast('Категория уже есть');
+    } else {
+      addCategory();
+    }
+  };
+
+  const deleteCategory = (id) => {
+    let newArrCategories = user.categories.filter((item) => item.id !== id);
+    axios
+      .patch(`http://localhost:8080/users/${user.id}`, { categories: newArrCategories })
+      .then(({ data }) => {
+        setUser({
+          ...data,
+          token: user.token,
+        });
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            ...data,
+            token: user.token,
+          }),
+        );
+        toast('Категория удалена');
+      })
+      .catch((err) => toast(`Категория не удалена, ${err.message}`));
   };
 
   return (
     <aside className="aside">
-      <div className="aside__title">
+      <button className="aside__exit" onClick={storageClear}>
+        Выйти
+      </button>
+      <div className={`aside__title ${status === 'all' ? 'active' : ''}`} onClick={() => setStatus('all')}>
         <svg
           className="aside__title-img"
           width="18"
@@ -58,9 +102,26 @@ const Aside = () => {
       </div>
       <ul className="aside__categories">
         {user.categories.map((task) => (
-          <li key={task.id} className="aside__categories-item">
-            <span className="aside__categories-round" style={{ backgroundColor: task.color}}></span>{' '}
-            <span className="aside__categories-text"></span>{task.categoryName}
+          <li key={task.id} className={`aside__categories-item ${status === task.categoryName ? 'active' : ''}`} onClick={() => setStatus(task.categoryName)}>
+            <span
+              className="aside__categories-round"
+              style={{ backgroundColor: task.color }}></span>{' '}
+            <span className="aside__categories-text">{task.categoryName}</span>
+            <span className="aside__categories-delete" onClick={(e) => {
+                e.stopPropagation()
+                deleteCategory(task.id)
+            }}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 16 16">
+                <path
+                  fill="none"
+                  stroke="#ccc"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="1.5"
+                  d="m11.25 4.75l-6.5 6.5m0-6.5l6.5 6.5"
+                />
+              </svg>
+            </span>
           </li>
         ))}
       </ul>
@@ -111,7 +172,7 @@ const Aside = () => {
                   }}></span>
               ))}
             </div>
-            <button type="button" className="aside__modal-btn" onClick={addCategory}>
+            <button type="button" className="aside__modal-btn" onClick={checkCategories}>
               Добавить
             </button>
             <button className="aside__modal-close" type="button" onClick={() => setModal(!modal)}>

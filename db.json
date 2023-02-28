@@ -5,7 +5,7 @@
       "login": "Kirill",
       "password": "1ei1iioj",
       "email": "test@test.com",
-      "catrgories": [
+      "categories": [
         {
           "id": 1,
           "categoryName": "Frontend",
@@ -60,21 +60,28 @@
       "login": "oleg",
       "categories": [
         {
-          "categoryName": "dfdfg",
-          "id": "18d2fe9b-2a1a-4e5e-8315-6b482213b45e",
+          "categoryName": "slkksk",
+          "id": "62014510-46fc-49c4-b970-5113ae3e1d38",
           "color": "red",
-          "tasks": []
+          "tasks": [
+            {
+              "taskTitle": "skkd",
+              "id": "810617ba-0d23-4987-89cd-889a0b94cb78",
+              "isComplete": false
+            }
+          ],
+          "categories": [
+            {
+              "taskTitle": "909",
+              "id": "944d1ef2-1551-45ae-82b2-21c0ca54aa8c",
+              "isComplete": false
+            }
+          ]
         },
         {
-          "categoryName": "sdfsdf",
-          "id": "97206042-e701-4a0c-b5d9-077acb4aaa7f",
-          "color": "yellow",
-          "tasks": []
-        },
-        {
-          "categoryName": "sdfsdf",
-          "id": "dffa3a92-70a6-4b5b-974f-253367b16e1c",
-          "color": "yellow",
+          "categoryName": "sdskkld",
+          "id": "82188b17-e56d-4f38-8082-c83f51211f77",
+          "color": "red",
           "tasks": []
         }
       ],

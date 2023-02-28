@@ -8,10 +8,16 @@ export const Context = (props) => {
         email: ''
     })
 
+    const [status, setStatus] = useState('all')
+
     const value = {
         user,
-        setUser
+        setUser,
+        status,
+        setStatus
     }
+    
+    
 
     return <CustomContext.Provider value={value}>
         {props.children}
